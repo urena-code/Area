@@ -1,0 +1,23 @@
+
+%initiate c
+x= [-2:.2:2];
+y= [-2:.2:2];
+
+%take a surface and change it into a grid
+[X,Y] = meshgrid(x,y);
+
+%Z is a matrix with the function defined
+Z=sqrt(-X.^2 - Y.^2 + 8);
+mesh(X,Y,Z);
+
+%plot
+title('mesh plot'), xlabel('x-axis') , ylabel('y-axis');
+
+%intialize variable
+totalArea=0;
+
+%new matrix that contains all the areas of the grid at Z 
+areas=.2*.2*Z;
+
+%tot is the sum of the sum of the values in the matrix 'areas'
+tot=sum(areas,'all');
